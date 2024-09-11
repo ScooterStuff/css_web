@@ -1,0 +1,36 @@
+/* src/styles/Footer.module.css */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0.5rem 0;
+  }
+  
+  .socials {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .socials a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .socials a:hover {
+    color: #ff5733;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 1rem;
+    }
+  }
+  

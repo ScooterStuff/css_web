@@ -1,0 +1,7 @@
+/* /styles/fonts.css */
+@font-face {
+    font-family: 'Nasalization';
+    src: url('/fonts/nasalization-rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

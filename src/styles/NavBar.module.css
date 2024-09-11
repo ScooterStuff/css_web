@@ -1,0 +1,202 @@
+/* Desktop/NavBar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #33333300;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 100;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 1.5vw;
+  width: 2.5vw;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/* Hover effect for the logo image */
+.logoImage:hover {
+  transform: scale(1.1); /* Scale up the logo slightly */
+  filter: url(#glow); /* Apply the SVG glow filter */
+}
+
+/* Define the filter for the glow effect */
+.svgGlow {
+  filter: url(#glow); /* Add a glow filter */
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust spacing between logo and text */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.logoText:hover::before {
+  opacity: 0.7; /* Subtle glow */
+  transform: scale(1); /* Reset scaling */
+}
+
+.logoText {
+  font-size: 1.5vw; /* Responsive font size */
+  color: #ffffff; /* Initial color */
+  font-family: 'Nasalization', sans-serif;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+.logoText::before {
+  content: 'Computer Science Society'; /* Same text as the logo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0751E8, #57CCEC); /* Gradient between two colors */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: scale(1.05); /* Subtle scaling */
+  filter: blur(0.5px); /* Reduced blur for a more subtle effect */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on the text */
+.logoText:hover {
+  color: transparent;
+}
+
+.logoText:hover::before {
+  opacity: 0.7; /* Subtle glow */
+  transform: scale(1); /* Reset scaling */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Subtle shimmering effect */
+.logoText:hover {
+  background-image: linear-gradient(90deg, rgba(7, 81, 232, 0.1) 25%, rgba(87, 204, 236, 0.3) 50%, rgba(7, 81, 232, 0.1) 75%);
+  background-size: 200px;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: shimmer 1.8s infinite linear; /* Slower and smoother */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding-right:50px;
+  gap:5vw;
+  font-size: 1.1vw; /* Responsive font size */
+  color: #ffffff; /* Initial color */
+  font-family: 'Nasalization', sans-serif;
+}
+
+.navLinks li {
+  margin: 0;
+}
+
+.navLinks a {
+  color: white; /* Initial link color */
+  text-decoration: none; /* Remove underline */
+  position: relative;
+  padding-bottom: 5px; /* Space for the underline effect */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0751E8, #57CCEC); /* Gradient for glowing effect */
+  border-radius: 10px; /* Curve the underline for a smooth look */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smooth underline animation */
+}
+
+/* Hover effect for the link */
+.navLinks a:hover {
+  color: #57CCEC; /* Color change on hover */
+}
+
+/* Hover effect for the underline */
+.navLinks a:hover::after {
+  transform: scaleX(1); /* Grow the underline from left to right */
+}
+
+
+/* Hide the hamburger menu on larger screens */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Hamburger bar styling */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Display the hamburger menu on mobile screens */
+  .hamburger {
+      display: block;
+  }
+  .logoText {
+    font-size: 5.5vw; /* Larger text on smaller screens */
+  }
+  .logoImage {
+    height:5vw;
+    width: 9vw;
+  }
+
+  /* Hide the nav links initially */
+  .navLinks {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #333;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Show nav links when menu is active */
+  .navLinks.active {
+      display: flex;
+      opacity: 1;
+  }
+
+  .navLinks li {
+      margin: 1rem 0;
+  }
+}
