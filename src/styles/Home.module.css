@@ -112,16 +112,17 @@
   
   .heroText {
     max-width: 50%;
+    max-height: 50%;
     font-family: 'Nasalization', sans-serif;
   }
   
   .heroText h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     color: #f4f4f4;
   }
   .gradientText {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     background: linear-gradient(270deg, #4fc3dc80, #0751e8);
     background-size: 200% 200%;
