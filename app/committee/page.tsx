@@ -59,7 +59,7 @@ const committeeData: Record<CommitteeYear, { name: string; role: string; imageSr
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ParallaxImage = ({ src, alt, dataValue }: { src: any; alt: string; dataValue: string }) => (
+const ParallaxImage = ({ src, alt, dataValue }: { src: string | StaticImageData; alt: string; dataValue: string }) => (
   <Image
     src={src}
     alt={alt}

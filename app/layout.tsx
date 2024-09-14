@@ -3,7 +3,6 @@ import '../src/styles/globals.css';
 import NavBar from '../src/components/NavBar';
 import Footer from '../src/components/Footer';  // Importing Footer component
 import '../src/styles/fonts.css';
-import styles from '../src/styles/Layout.module.css';
 import MouseTrail from '../src/components/MouseTrail';  // Importing MouseTrail
 
 export default function RootLayout({

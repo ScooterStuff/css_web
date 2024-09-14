@@ -1,6 +1,5 @@
 "use client";
 
-import _logo from '../public/image/logo.svg';
 import styles from '../src/styles/Home.module.css';
 import { CSSProperties } from 'react';
 import React, { useState } from 'react';

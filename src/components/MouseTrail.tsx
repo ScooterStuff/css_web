@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 const MouseTrail: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [hovering, setHovering] = useState(false);
-  const [ripples, setRipples] = useState<{ x: number; y: number; radius: number; alpha: number }[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,16 +26,6 @@ const MouseTrail: React.FC = () => {
       });
     };
 
-    const handleMouseClick = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-
-      setRipples((prevRipples) => [
-        ...prevRipples,
-        { x: mouseX, y: mouseY, radius: 0, alpha: 1 }, // Add new ripple on click
-      ]);
-    };
 
     const updateParticlesAndRipples = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -62,23 +51,6 @@ const MouseTrail: React.FC = () => {
         }
       });
 
-      // Update ripples
-      setRipples((prevRipples) =>
-        prevRipples.filter((ripple) => ripple.alpha > 0).map((ripple) => {
-          ripple.radius += 5; // Increase ripple size for more visible effect
-          ripple.alpha -= 0.03; // Fade out ripple gradually
-
-          // Draw the ripple
-          ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.alpha})`; // White ripple effect
-          ctx.lineWidth = 2; // Line width for the ripple
-          ctx.beginPath();
-          ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
-          ctx.stroke();
-
-          return ripple;
-        })
-      );
-
       requestAnimationFrame(updateParticlesAndRipples);
     };
 
@@ -98,7 +70,6 @@ const MouseTrail: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseClick); // Add listener for mouse clicks
     window.addEventListener('mouseover', handleMouseOverInteractive);
 
     requestAnimationFrame(updateParticlesAndRipples);
@@ -106,7 +77,6 @@ const MouseTrail: React.FC = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mousedown', handleMouseClick);
       window.removeEventListener('mouseover', handleMouseOverInteractive);
     };
   }, [hovering]);
