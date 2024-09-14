@@ -69,13 +69,13 @@
   }
   
   .detailText {
-    font-size: 1.1rem; /* Slightly larger for better readability */
+    font-size: 0.9rem; /* Slightly larger for better readability */
     color: #2c3e50; /* A darker color for contrast */
     margin: 2px 0; /* Increased margin for better spacing */
     z-index: 2;
     text-align: center;
     font-family: 'Nasalization', sans-serif; /* Use the same font for consistency */
-    letter-spacing: 0.05rem; /* Slight letter spacing for a modern feel */
+    letter-spacing: 0.02rem; /* Slight letter spacing for a modern feel */
     line-height: 1.5; /* Increase line height for readability */
     background: #2c3e50;
     background-clip: text;
