@@ -1,0 +1,37 @@
+.card {
+    background-color: #ffffff80;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .cardTitle {
+    padding: 15px;
+    background: linear-gradient(270deg, #1c71a480, #3399ff90); /* Gradient from darker blue to lighter blue */
+    color: white;
+    margin: -20px -20px 10px -20px;
+    font-weight: 300;
+    border-radius: 3px 3px 0 0;
+    font-size: 22px;
+    font-family: 'Nasalization', sans-serif;
+}
+
+  
+  .cardContent {
+    padding: 10px 0;
+    color: #1d1d1d;
+    font-family: 'Nasalization', sans-serif;
+  }
+  
+  .cardTimestamp {
+    display: block;
+    font-size: 12px;
+    color: #353535;
+    text-align: right;
+    font-family: 'Nasalization', sans-serif;
+  }
+  

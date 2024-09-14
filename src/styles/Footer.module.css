@@ -1,36 +1,43 @@
 /* src/styles/Footer.module.css */
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #33333300;
+  color: white;
+  text-align: center;
+  width: 100%; /* Ensure the footer spans the full width */
+  margin-top: auto; /* Push footer to the bottom when content is less */
+  padding-bottom: 20px;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-family: 'Nasalization', sans-serif;
+  opacity: 0.6;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  font-family: 'Nasalization', sans-serif;
+  opacity: 0.6;
+}
+
+.socials a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #ff5733; /* Hover effect for social links */
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem;
   }
-  
-  .footer p {
-    margin: 0.5rem 0;
-  }
-  
-  .socials {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .socials a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .socials a:hover {
-    color: #ff5733;
-  }
-  
-  @media (max-width: 768px) {
-    .footer {
-      padding: 1rem;
-    }
-  }
-  
+}

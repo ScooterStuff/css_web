@@ -1,0 +1,74 @@
+
+.svgBox {
+    position: fixed; /* Ensures the SVG stays in place when scrolling */
+    top: 60%; /* Moves the SVG halfway down the viewport */
+    left: 50%; /* Moves the SVG halfway across the viewport */
+    transform: translate(-50%, -50%); /* Centers the SVG by adjusting its position back by 50% */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    z-index: -1; /* Places the SVG behind all other content */
+    overflow: hidden; /* Prevents overflow issues */
+  }
+  
+  .svgBox svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 15;
+    transform: scale(1);
+    stroke: url(#blueGradient); /* Ensure the correct gradient id */
+    stroke-dasharray: 800 800;
+    stroke-linecap: round;
+    opacity: 0.2;
+    animation: oj 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite, glow-blue 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    overflow-x: hidden;
+  }
+
+  .svgBox2 svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 40;
+    transform: scale(1);
+    stroke: url(#whiteGradient); /* Ensure the correct gradient id */
+    stroke-dasharray: 100 172;
+    stroke-linecap: round;
+    opacity: 0.2;
+    animation: oj 180s linear infinite;
+  }
+  
+  @keyframes glow-blue {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px #0751E8); /* Blue */
+    }
+    50% {
+      filter: drop-shadow(0 0 15px #57CCEC); /* Light Blue */
+    }
+  }
+  
+  @keyframes oj {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 1600; /* Reaches the end */
+    }
+    100% {
+      stroke-dashoffset: 0; /* Reverses back to start */
+    }
+  }
+
+  @keyframes oj2 {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 272; /* Reaches the end */
+    }
+    100% {
+      stroke-dashoffset: 0; /* Reverses back to start */
+    }
+  }
+

@@ -1,0 +1,237 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensures the bubbles are layered above the hero section */
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicks through the bubbles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(250s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+  background: #0751E8;
+  box-shadow: 0 0 0 10px #0751E844,
+    0 0 50px #0751E8,
+    0 0 100px #0751E8;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.svgBox svg {
+  height: 200vw;
+  width: 200vw;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 15;
+  transform: scale(1);
+  stroke: url(#col);
+  stroke-dasharray: 800 800;
+  stroke-linecap: round;
+  animation: oj 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite, glow-blue 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+@keyframes glow-blue {
+  0%, 100% {
+      filter: drop-shadow(0 0 10px #0751E8); /* Blue */
+  }
+  50% {
+      filter: drop-shadow(0 0 15px #57CCEC); /* Light Blue */
+  }
+}
+
+@keyframes oj {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: 1600; /* Reaches the end */
+    }
+    100% {
+        stroke-dashoffset: 0; /* Reverses back to start */
+    }
+}
+
+.inverted .svgBox svg {
+  animation: oj 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite, glow-red-yellow 16s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+
+@keyframes glow-red-yellow {
+  0%, 100% {
+      filter: drop-shadow(0 0 10px #FF4500); /* Red */
+  }
+  50% {
+      filter: drop-shadow(0 0 15px #FFA500); /* Yellow */
+  }
+}
+
+
+.heroSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80vh; /* Takes up 80% of the viewport height */
+    padding: 0 5vw;
+  }
+  
+  .heroText {
+    max-width: 50%;
+    font-family: 'Nasalization', sans-serif;
+  }
+  
+  .heroText h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    color: #f4f4f4;
+  }
+  .gradientText {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(270deg, #4fc3dc80, #0751e8);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite; /* Apply the gradient animation */
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .heroText p {
+    font-size: 2.5rem;
+    color: #666;
+  }
+  
+.svgBox {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  
+.svgBox svg {
+    width: 100%;
+    height: auto;
+  }
+
+.socialIcons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+  
+
+  @media (max-width: 768px) {
+    .heroSection {
+      flex-direction: column;
+      height: auto;
+      text-align: center;
+    }
+    
+    .heroText, .svgBox {
+      max-width: 100%;
+    }
+    
+    .heroText h1 {
+      font-size: 2rem;
+    }
+    .gradientText {
+      font-size: 2rem;
+    }
+    
+    .heroText p {
+      font-size: 1rem;
+    }
+    .socialIcons a {
+      font-size: 1.75rem;
+    }
+  
+    .svgBox {
+      margin-top: 1rem;
+    }
+  }
+
+
+/* Default styles (blue/dark blue, black/white) */
+
+/* When inverted, swap the colors */
+.inverted {
+  color: #fff;
+}
+
+/* Bubbles colors */
+.inverted .bubbles span {
+  background: #FFA500; /* Yellow */
+  box-shadow: 0 0 0 10px #FFA50044, 0 0 50px #FFA500, 0 0 100px #FFA500;
+}
+
+.inverted .bubbles span:nth-child(even) {
+  background: #FF4500; /* Red */
+  box-shadow: 0 0 0 10px #FF450044, 0 0 50px #FF4500, 0 0 100px #FF4500;
+}
+
+
+.inverted .gradientText {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(270deg, #FFA50080, #FF4500);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite; /* Apply the gradient animation */
+}
+
+/* SVG color inversion */
+.inverted .svgBox svg {
+  stroke: #fff;
+}
+
+/* Social Icons (invert black/white) */
+.inverted .socialIcons a {
+  color: #fff; /* Icons turn white */
+}

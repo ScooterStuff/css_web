@@ -1,0 +1,103 @@
+.card {
+    position: relative;
+    width: 40vh; /* Adjust the card width */
+    height: 25vh; /* Adjust the card height */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes the image fill the card while maintaining aspect ratio */
+    transition: all 0.3s ease;
+  }
+  
+  .cardName,
+  .cardRole {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: 'Nasalization', sans-serif;
+    background: #ffffff;
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+    z-index: 2;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  }
+  
+  .cardName {
+    font-size: 1.5rem; /* Adjust the size to look nice */
+    margin-bottom: 15px; /* Increased space between name and role */
+  }
+  
+  .cardRole {
+    font-size: 1.2rem; /* Slightly smaller than the name */
+    margin-top: 10px;  /* Optional, add margin above role if needed */
+  }
+  
+  .cardOverlay {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    transition: right 0.4s ease;
+  }
+  
+  .card:hover .cardOverlay {
+    right: 0;
+  }
+  
+  .card:hover .cardName,
+  .card:hover .cardRole {
+    color: #ee141480; /* Change the text color to black on hover */
+    -webkit-text-fill-color: #4fc3dc80; /* Ensure proper text fill for Webkit-based browsers */
+    -webkit-text-fill-color: transparent;
+    background: none; /* Remove the background gradient on hover */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  }
+  
+  .detailText {
+    font-size: 1.1rem; /* Slightly larger for better readability */
+    color: #2c3e50; /* A darker color for contrast */
+    margin: 2px 0; /* Increased margin for better spacing */
+    z-index: 2;
+    text-align: center;
+    font-family: 'Nasalization', sans-serif; /* Use the same font for consistency */
+    letter-spacing: 0.05rem; /* Slight letter spacing for a modern feel */
+    line-height: 1.5; /* Increase line height for readability */
+    background: #2c3e50;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .card:hover .cardImage {
+    transform: scale(1.1); /* Slight zoom on image hover */
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

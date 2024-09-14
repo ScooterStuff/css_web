@@ -1,0 +1,230 @@
+.timelineContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .projectName {
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Dosis", sans-serif;
+    color: #333;
+  }
+  
+  .timeline {
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    padding: 0 20px;
+  }
+  
+  .timeline:before {
+    content: "";
+    width: 10px;
+    height: 120%;
+    background: linear-gradient(180deg, #1c71a4, #ff6347); /* Starting gradient */
+    left: 50%;
+    top: 0;
+    position: absolute;
+    border-radius: 10px; /* Rounded edges */
+    animation: gradientAnimation 6s ease-in-out infinite; /* Smooth gradient animation */
+  }
+  
+  /* Keyframes for smooth gradient fade animation */
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(180deg, #1c71a4, #ff6347); /* Back to blue to red */
+    }
+    33% {
+      background: linear-gradient(180deg, #1c71a4, #ff6347); /* Back to blue to red */
+    }
+    66% {
+      background: linear-gradient(180deg, #1c71a4, #ff6347); /* Back to blue to red */
+    }
+    100% {
+      background: linear-gradient(180deg, #1c71a4, #ff6347); /* Back to blue to red */
+    }
+  }
+  
+  
+  .timelineItem {
+    margin-bottom: 50vh;
+    position: relative;
+    clear: both;
+    overflow: hidden; /* Prevents content overflow */
+  }
+  
+  .timelineIcon {
+    background: #1c71a4;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    border-radius: 50%;
+    display: none;
+  }
+  
+  .left .timelineIcon {
+    display: block;
+  }
+  
+  .timelineContent {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 45%;
+    overflow: hidden; /* Prevents content overflow */
+    box-sizing: border-box;
+  }
+  
+  .timelineContent img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Positioning for left-aligned items */
+  .left {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-right: 5%;
+    box-sizing: border-box;
+  }
+  
+  /* Positioning for right-aligned items */
+  .right {
+    float: right;
+    clear: both;
+    width: 45%;
+    margin-left: 5%;
+    box-sizing: border-box;
+  }
+  
+  .timelineContent h2 {
+    padding: 15px;
+    background: #1c71a4;
+    color: #fff;
+    margin: -20px -20px 0 -20px;
+    font-weight: 300;
+    border-radius: 3px 3px 0 0;
+    font-size: 22px;
+  }
+  
+  .timelineContent p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .timelineContent .timeStamp {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+  }
+  
+  /* Mobile Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .timeline:before {
+      left: 0;
+    }
+  
+    .timelineContent {
+      width: 90%;
+      float: none;
+      left: 0;
+    }
+  
+    .left,
+    .right {
+      position: static;
+      float: none;
+      clear: both;
+      width: 100%;
+      margin: 0;
+    }
+  
+    .timelineIcon {
+      left: 0;
+    }
+  }
+  
+  /* Animation Classes */
+  .isHidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animateIt {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+
+  .aboutSection {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    position: relative; /* Make the container relative */
+  }
+
+  .title {
+    font-size: 6rem;
+    font-family: 'Nasalization', sans-serif;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(270deg, #4fc3dc80, #fff);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+    position: absolute; /* Make the title absolute */
+    z-index: 1; /* Ensure the title is above the SVG */
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+
+  .yearSelector {
+    position: fixed; /* Keeps the button fixed on screen even when scrolling */
+    bottom: 1vw; /* You can change this value to move it vertically */
+    right: 20px; /* You can change this value to move it horizontally */
+    display: flex;
+    flex-direction: column; /* Stacks the buttons vertically */
+    gap: 10px;
+    z-index: 1000; /* Ensures it's on top of other content */
+    font-family: 'Nasalization', sans-serif;
+  }
+  
+  .yearSelector p {
+    opacity: 1;
+  }
+  
+  .yearSelector button {
+    padding: 10px 20px;
+    background-color: #0751E8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .yearSelector button:hover {
+    background-color: #57CCEC;
+  }
+  
+  .yearSelector button.active {
+    background-color: #57CCEC;
+  }

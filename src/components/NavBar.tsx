@@ -18,12 +18,12 @@ const NavBar = () => {
                 <Link href='/'>
                     <div className={styles.logoLink}>
                         <Image src={logo} alt='logo' className={styles.logoImage}/>
-                        <span className={styles.logoText}>Computer Science Society</span>
+                        <span className={styles.logoText}>UCL Computer Science Society</span>
                     </div>
                 </Link>
             </div>
             <div className={styles.hamburger} onClick={toggleMenu}>
-                {/* Hamburger icon */}
+                {/* Hamburger icon lolw*/}
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
@@ -34,6 +34,18 @@ const NavBar = () => {
                 </li>
                 <li>
                     <Link href="/about" onClick={toggleMenu}>About</Link>
+                </li>
+                <li>
+                    <Link href="/events" onClick={toggleMenu}>Events</Link>
+                </li>
+                <li>
+                    <Link href="/committee" onClick={toggleMenu}>Committee</Link>
+                </li>
+                <li>
+                    <Link href="https://linktr.ee/uclcss" onClick={toggleMenu}>Tickets</Link>
+                </li>
+                <li>
+                    <Link href="/" onClick={toggleMenu}>Jobs</Link>
                 </li>
                 <li>
                     <Link href="/shop" onClick={toggleMenu}>Shop</Link>

@@ -1,0 +1,294 @@
+.basketButton {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    padding: 0.5rem;
+    color: #ffffff;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.basketButton i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.cart {
+    position: fixed;
+    top: 20vh;
+    right: 0;
+    width: 360px;
+    min-height: 60vh;
+    padding: 20px;
+    background: linear-gradient(180deg, #17171790, #17171790);
+    box-shadow: -2px 0 4px hsl(0, 4%, 15% / 10%);
+    transition: transform 0.5s ease;
+    transform: translateX(100%);
+    z-index: 1000;
+}
+
+.cartOpen {
+    transform: translateX(0);
+}
+
+.cartTitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.cartContent {
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid #000;
+}
+
+.totalTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.totalPrice {
+    font-size: 1.075rem;
+    margin: 1rem 0 0 0.7rem;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.btnBuy {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    width: 50%;
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+    background: #e4e4e4;
+    color: #171717;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.btnClose {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: #dbdbdb;
+    cursor: pointer;
+    font-style: normal;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.cartBox {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #000;
+}
+
+.cartImage {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+    object-position: center;
+}
+
+.detailBox {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.cartProductTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.cartPrice {
+    font-weight: 500;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.cartQuantity {
+    border: 1px solid #000;
+    outline-color: rgb(255, 0, 0);
+    color: #000;
+    width: 2.8rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-family: 'Nasalization', sans-serif;
+    font-weight: 900;
+    color: linear-gradient(270deg, #4fc3dc80, #fff);
+}
+
+.shop {
+    margin-top: 2rem;
+}
+
+.shopContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 100px;
+}
+
+.productBox {
+    position: relative;
+    background: #2d2e3780;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.productBox:hover {
+    background-color: #3f3f42;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 8px 32px hsla(0.75, 0.82, 0.165, 1);
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.productTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.productPrice {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.addCart {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #4fc3dc80;
+    font-size: 1.2rem;
+    border-radius: 10%;
+    cursor: pointer;
+    font-family: 'Nasalization', sans-serif;
+}
+
+.addCart:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+    .shopContent {
+        grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cart {
+        width: 100%;
+        right: 0;
+    }
+
+    .btnBuy {
+        width: 80%;
+    }
+
+    .cartImage {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shopContent {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+    .basketButton {
+        top: 2rem; /* Adjust button position */
+        right: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .shopContent {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        padding: 0 10px;
+    }
+
+    .productBox {
+        padding: 5px;
+    }
+
+    .productTitle, .productPrice {
+        font-size: 1rem;
+    }
+
+    .addCart {
+        font-size: 1rem;
+    }
+
+    .cartImage {
+        width: 60px;
+        height: 60px;
+    }
+
+    .basketButton {
+        top: 1rem;
+        right: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .basketButton i {
+        font-size: 1.2rem;
+    }
+
+    .cartTitle {
+        font-size: 1.2rem;
+    }
+}

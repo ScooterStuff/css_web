@@ -1,0 +1,10 @@
+.trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Ensure that the canvas doesn't block interactions with other elements */
+    z-index: 9999; /* Ensure it is on top of all elements, including the NavBar */
+  }
+  
