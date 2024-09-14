@@ -14,7 +14,6 @@ import suhas from '../../public/image/Suhas.png';
 import ahmed from '../../public/image/Ahmed.png';
 import christy from '../../public/image/Christy.png';
 import abdullah from '../../public/image/Abdullah.png';
-import funny from '../../public/image/funny.jpg';
 import Image from 'next/image';
 import Member from '../../src/components/Member'; // Import the Member component
 

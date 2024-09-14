@@ -1,13 +1,12 @@
 'use client'; // Add this to ensure the About page runs on the client
 import '../../src/styles/globals.css';
 
-import { useLayoutEffect, useRef, useEffect } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import styles from '../../src/styles/About.module.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import funny from '../../public/image/funny.jpg';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import BackDrop from '@/components/BackDrop';
 
 
@@ -78,10 +77,10 @@ const About = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.textWrapper}>
             <p className={styles.text}>
-              A way to add style to your webpage, duh! Just kidding—though we do love a good coding joke! We’re a society created by and for students of Computer Science at UCL. Whether you're diving deep into algorithms or just figuring out your first line of code, we’re here to build a community that thrives on curiosity, collaboration, and creativity.
+              A way to add style to your webpage, duh! Just kidding—though we do love a good coding joke! We're a society created by and for students of Computer Science at UCL. Whether you're diving deep into algorithms or just figuring out your first line of code, we're here to build a community that thrives on curiosity, collaboration, and creativity.
             </p>
             <p className={styles.text}>
-              While we’re proudly funded by the department, membership isn’t exclusive to Computer Science students! If you appreciated that little CSS joke up top, you’re already one of us. 👾
+              While we're proudly funded by the department, membership isn't exclusive to Computer Science students! If you appreciated that little CSS joke up top, you're already one of us. 👾
             </p>
           </div>
           
@@ -116,7 +115,7 @@ const About = () => {
       <section ref={socialRef} className={`${styles.anotherSection}`}>
         <h2 className={styles.heading}>Socials</h2>
         <p className={styles.text}>
-        At UCL Computer Science Society, we believe in balancing work with play! Our social events are all about bringing people together in a relaxed, fun environment. From casual picnic hangouts in the park to competitive bowling nights, and game nights filled with laughter, there’s something for everyone. Whether you're a board game enthusiast, love trying out new sports, or just want to chill with fellow students, our socials are the perfect way to make new friends and unwind from academic life. Come join us—fun is always on the agenda!
+        At UCL Computer Science Society, we believe in balancing work with play! Our social events are all about bringing people together in a relaxed, fun environment. From casual picnic hangouts in the park to competitive bowling nights, and game nights filled with laughter, there's something for everyone. Whether you're a board game enthusiast, love trying out new sports, or just want to chill with fellow students, our socials are the perfect way to make new friends and unwind from academic life. Come join us—fun is always on the agenda!
         </p>
       </section>
     </div>

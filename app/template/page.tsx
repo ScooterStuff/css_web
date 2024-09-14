@@ -1,5 +1,5 @@
 'use client'; // Add this to ensure the About page runs on the client
-import { useEffect, useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import styles from '../../src/styles/Events.module.css';
 import '../../src/styles/globals.css';
 import { gsap } from "gsap";

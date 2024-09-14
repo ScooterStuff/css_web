@@ -1,8 +1,7 @@
 "use client";
 
-import logo from '../public/image/logo.svg';
+import _logo from '../public/image/logo.svg';
 import styles from '../src/styles/Home.module.css';
-import Image from 'next/image';
 import { CSSProperties } from 'react';
 import React, { useState } from 'react';
 
@@ -43,7 +42,7 @@ export default function Home() {
           <h1>
             Welcome to the UCL <span className={styles.gradientText}>Computer Science Society</span>
           </h1>
-          <p>This is the homepage of our society's website.</p>
+          <p>This is the homepage of our society&apos;s website.</p>
         </div>
         <div className={styles.svgBox} onClick={toggleColorMode}>
           <svg
