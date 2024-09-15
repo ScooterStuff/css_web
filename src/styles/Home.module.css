@@ -219,13 +219,15 @@
 
 
 .inverted .gradientText {
-    font-size: 5rem;
     margin-bottom: 0.5rem;
     background: linear-gradient(270deg, #FFA50080, #FF4500);
     background-size: 200% 200%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 5s ease infinite; /* Apply the gradient animation */
+}
+
+.inverted h1 {
 }
 
 /* SVG color inversion */
