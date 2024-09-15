@@ -85,26 +85,7 @@ export default function Shop() {
             }
         });
     };
-
-    // const handleCheckout = async () => {
-    //     const stripe = await stripePromise;
-
-    //     const response = await fetch('/api/checkout', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ cartItems }),
-    //     });
-
-    //     const session = await response.json();
-
-    //     // Redirect the user to the Stripe checkout page
-    //     const result = await stripe?.redirectToCheckout({ sessionId: session.id });
-
-    //     if (result?.error) {
-    //         console.error(result.error.message);
-    //     }
-    // };
-
+    
     return (
         <div>
             <BackDrop/>

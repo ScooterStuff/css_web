@@ -16,6 +16,7 @@
   margin: 0.5rem 0;
   font-family: 'Nasalization', sans-serif;
   opacity: 0.6;
+  font-size: 1vw;
 }
 
 .socials {
@@ -29,6 +30,7 @@
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 0.8vw;
 }
 
 .socials a:hover {

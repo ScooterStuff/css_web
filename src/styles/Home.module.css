@@ -117,12 +117,12 @@
   }
   
   .heroText h1 {
-    font-size: 4rem;
+    font-size: 4vw;
     margin-bottom: 0.5rem;
     color: #f4f4f4;
   }
   .gradientText {
-    font-size: 4rem;
+    font-size: 4vw;
     margin-bottom: 0.5rem;
     background: linear-gradient(270deg, #4fc3dc80, #0751e8);
     background-size: 200% 200%;
@@ -144,7 +144,7 @@
   }
   
   .heroText p {
-    font-size: 2rem;
+    font-size: 2vw;
     color: #666;
   }
   
@@ -176,6 +176,7 @@
     
     .heroText, .svgBox {
       max-width: 100%;
+      margin-top: 15vh;
     }
     
     .heroText h1 {
